@@ -1,0 +1,27 @@
+[user]
+	name = westly
+	email = nguyen.thanh.bao@moneyforward.co.jp
+[push]
+        default = current
+[alias]
+	debug = !git stash apply $(git stash list | tail -1 | cut -d: -f1)
+        lg = log --oneline --graph --decorate
+[core]
+  	excludesfile = ~/.gitignore_global
+  	editor = vim
+	pager = delta
+[interactive]
+    	diffFilter = delta --color-only
+[delta]
+	side-by-side = true
+    	navigate = true  # use n and N to move between diff sections
+	dark = true
+[diff]
+  	tool = vimdiff 
+
+[merge]
+  	tool = vimdiff
+  	conflictstyle = diff3     # Hiển thị cả base trong conflict
+[color]
+  	ui = true
+  	status = auto

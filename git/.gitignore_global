@@ -1,0 +1,4 @@
+.cursor
+.bravo
+Procfile.dev
+config/initializers/console.rb

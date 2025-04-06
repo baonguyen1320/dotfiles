@@ -13,4 +13,11 @@ module Rails::ConsoleMethods
       puts ""
     end
   end
+
+  def extract_url(path, method: :get)
+    route = Rails.application.routes.recognize_path(path, method: method)
+    controller = "#{route[:controller].camelize}Controller".constantize
+    action = route[:action]
+    { controller: controller, action: action, params: route.except(:controller, :action) }
+  end
 end
